@@ -32,34 +32,43 @@ The goal is to fetch the `value`.<br>
 Now, `value` can be either be `Constants.SAMPLE_SERVICE` or simply `SAMPLE_SERVICE` (by making a static import).
 We need to fetch the fully qualified name of `SAMPLE_SERVICE`. In this case, it is `com.sample.Constants.SAMPLE_SERVICE`.
 
-## Fingit tellure sine natura
+### The Process
 
-Veniamque disparibus oculos subiecto **aures**, liquefacta pando blandis, cum
-creatam vana. In est, stamina aditumque erat accedere, est ubi et, undas
-revulsum. Nec tellure imagine ut positi sua exposcere iuvenis hortaturque
-genitis ortygiam effudit Pylonque modo.
+Let me breakdown the steps involved to accomplish this.
 
-## Naribus ab sonus genas
+1. **Obtain `PsiAnnotation` <br>**
+    
+       (psiClass.modifierList?.annotations?.toList() ?: listOf())
+           .filter { annotation ->
+               annotation.qualifiedName == "org.springframework.stereotype.Service"
+           }
+    
+    We first get an instance of the `PsiClass`, then access the `PsiModifierList`, and in turn get an array of 
+    `PsiAnnotaion`. We then filter the `@Service` annotation from it.
+    
+2. **Obtain `KtValueArgument` <br>**
 
-Fit bracchia cape remissis omnia an levi tradit tuorum murice segnibus
-laetissimus levia infelix. Capillos vestes eodem. Rata sum longus haec abest
-ungues, quas aquas, non qui sentit. Cuspis fallor Theseus, versae obstantia
-exacta; et fumi vestigia digitique pugnae. Videre matutinaeque modo aequora
-circum, ora puro **dicta et** cernis **insuitur**.
+       val valueArgument = 
+           ((psiAnnotation as KtLightElement<*, *>).kotlinOrigin as KtAnnotationEntry)
+               .findAttributeValue("value") as? KtValueArgument
+    
+    The code here is straightforward. The key here is the *type casting* to the right `Kt` element. This is how Psi for
+    Java differs from Kotlin. We have a corresponding `Kt`class for each of the Java Psi. I use the `PsiViewer` plugin to
+    get a general sense of the Psi tree and then use that to parse the Psi class.
+    
+3. **Obtain `PsiReference` <br>**
 
-    if (bare + primary == process_log_graphic + pingSequence) {
-        applet += soft_multimedia_unix - lanCopyFile + nosql;
-    }
-    dualVeronica.networking += 4;
-    var pixelHost = menu_server;
-    if (snippet_digitize.wavelengthHdmiTerminal(lock_token_cd, tftError)) {
-        mirror(service(ad_parity, 54), superscalar);
-        bookmark *= 962264;
-    } else {
-        port = ip_smishing;
-    }
-
-Nil omnia Fama, proximus custodia puppe comae. Pater cum, vel albis. Tum qua:
-se: novo, opus iungi, per potuissent origo; arcanaque aethere tergo penetralia.
-Mihi et claudit fortuna *rata Tusci*: est illa illic armo.
-
+       val expression = valueArgument.lastChild
+       val references = when (expression) {
+            is KtDotQualifiedExpression -> expression.lastChild.references
+            is KtNameReferenceExpression -> expression.references
+            else -> null
+       }
+       val reference = references?.find { it is KtSimpleNameReference }
+   
+   This is handle the 2 types of occurrences of the `value`. Again, I don't know these Psi terms on the top of my head, 
+   and I often use the `PsiViewer` or put a breakpoint and the use the `Evaluate Expression` feature to see what I can get
+   out of `KtValueArgument`. Believe me, you can learn a lot about an object in the Debug context.
+   
+4. **Obtain Fully qualified name <br>**
+    Just call `reference?.resolve()` to get the fully qualified name.
