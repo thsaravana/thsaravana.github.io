@@ -5,16 +5,13 @@ title: "PSI Parsing of Kotlin Files"
 
 I have written a couple of intellJ plugins that involves parsing PSI, but that's for Java. Recently, I was writing a plugin to help me in my office work. This time it involved PSI parsing of Kotlin files. I expected it to be the same as Java, but oh my, it was different. So thought of writing a one-pager on it.
 
-## Dextraque demittit arte passa hoste
+### Adding Kotlin support for the Plugin
+The first thing to do would be to add `Kotlin` plugin dependency. This will let to access the Kotlin Psi classes. The [intelliJ document](https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_dependencies.html) explains how to add plugin dependencies. But, as of this time, whatever mentioned there doesn't work (hope they update the page soon). You need to add the below to your `build.gradle` to add Kotlin dependency.
 
-Lorem markdownum et habet Pentheus *aliena ubi* arida adest, visura colubras
-aequora, fuit adhuc hos funesta fine; nati. Quidem pars. Fertilitas dea. Mens
-vimine. Ait mihi qui nomen ferrum, bibit non tollentes umeris, infra fertur in
-ortus abesse anxia extimuit frondentis portante.
+    intellij {
+        plugins "Kotlin" // This is possible because Kotlin is bundled with the IDE, if not you need to mention the exact version of the Kotlin plugin
+    }
 
-- Videt molior aut
-- Divitibusque tunicasque sustulit
-- Tu aethera esse nec ceu ululatibus nulla
 
 ## Poma ferre vox
 
