@@ -1,7 +1,7 @@
 # Dependencies
 highlighter:      rouge
 
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-feed
 

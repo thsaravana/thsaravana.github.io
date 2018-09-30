@@ -3,23 +3,34 @@ layout: post
 title: "PSI Parsing of Kotlin Files"
 ---
 
-I have written a couple of intellJ plugins that involves parsing PSI, but that's for Java. Recently, I was writing a plugin to help me in my office work. This time it involved PSI parsing of Kotlin files. I expected it to be the same as Java, but oh my, it was different. So thought of writing a one-pager on it.
+I have written a couple of intellJ plugins that involves parsing PSI, but that's for Java. 
+Recently, I was writing a plugin to help me in my office work. This time it involved PSI 
+parsing of Kotlin files. I expected it to be the same as Java, but oh my, it was different. 
+So thought of writing a one-pager on it.
 
 ### Adding Kotlin support for the Plugin
-The first thing to do would be to add `Kotlin` plugin dependency. This will let to access the Kotlin Psi classes. The [intelliJ document](https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_dependencies.html) explains how to add plugin dependencies. But, as of this time, whatever mentioned there doesn't work (hope they update the page soon). You need to add the below to your `build.gradle` to add Kotlin dependency.
+The first thing to do would be to add `Kotlin` plugin dependency. This will let to access 
+the Kotlin Psi classes. The [intelliJ document](https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_dependencies.html)
+ explains how to add plugin dependencies. But, as of this time, whatever mentioned there does not work (hope they update the page soon).
+  You need to add the below to your `build.gradle` to add Kotlin dependency.
 
     intellij {
         plugins "Kotlin" // This is possible because Kotlin is bundled with the IDE, if not you need to mention the exact version of the Kotlin plugin
     }
 
 
-## Poma ferre vox
+### Objective
 
-Adeunt adeo candida Iuppiter pulvere iuxta facta prole solis, postquam. Saecula
-ille caelesti [fortius caede](http://index-gravitate.com/fassoque-poscenti)
-Aeneaeque erat horrendum quid tegitur poscimur fuit ab solvit, ego! Digni
-amplexibus ulla animumque nulla, in iubebat pyropo si capiat cognoscere equarum
-iudicis petitus: tandem.
+    import org.springframework.stereotype.Service
+    
+    @Service(value = Constants.SAMPLE_SERVICE)
+    class SampleService {
+        //...
+    }
+
+The goal is to fetch the `value`.<br>
+Now, `value` can be either be `Constants.SAMPLE_SERVICE` or simply `SAMPLE_SERVICE` (by making a static import).
+We need to fetch the fully qualified name of `SAMPLE_SERVICE`. In this case, it is `com.sample.Constants.SAMPLE_SERVICE`.
 
 ## Fingit tellure sine natura
 
