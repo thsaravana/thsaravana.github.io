@@ -13,7 +13,7 @@
 
 /* Font */
 html {
-  font-family: Helvetica, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 /*h1, /*h2, h3, h4, h5, h6 {
@@ -22,41 +22,45 @@ html {
 
 .description {
     font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
     font-weight: lighter;
 }
 
+.description .hyperlink {
+    color: rgba(255, 255, 255, 1);
+    font-weight: normal;
+}
+
 .content h1 {
-  font-size: 1rem;
-  padding-top:0.5rem;
+    font-size: 1rem;
+    padding-top: 0.5rem;
 }
 
 h2, h3, h4, h5, h6 {
-  margin-top: 1.5em;
-  margin-bottom: .5em;
+    margin-top: 1.5em;
+    margin-bottom: .5em;
 }
-
 
 /* Override Hyde/Poole */
 @media (min-width: 48em) {
-  .content, .container {
-    max-width: none;
-  }
+    .content, .container {
+        max-width: none;
+    }
 }
 
 @media (min-width: 48em) {
-  .sidebar {
-    width: 20rem;
-    height: 100vh;
-    overflow-y: auto;
-    padding-top:4rem;
-  }
+    .sidebar {
+        width: 20rem;
+        height: 100vh;
+        overflow-y: auto;
+        padding-top: 4rem;
+    }
 }
 
 .sidebar-about h1 {
     font-size: 3rem;
     font-family: "Montserrat", sans-serif;
 }
-
 
 /* From Bootstrap */
 .list-inline {
@@ -85,7 +89,6 @@ h2, h3, h4, h5, h6 {
     line-height: 2.5em;
 }
 
-
 .btn-outline {
     margin-top: 3vh;
     border: solid 2px #fff;
@@ -93,10 +96,10 @@ h2, h3, h4, h5, h6 {
     /*transition: all .3s ease-in-out;*/
     background: #fff;
 }
+
 a.btn-outline {
     color: inherit;
 }
-
 
 /* Custom */
 
@@ -115,7 +118,7 @@ a.btn-outline {
 }
 
 #credits {
-  font-size: 0.8em;
+    font-size: 0.8em;
 }
 
 #credits a {
@@ -170,7 +173,6 @@ a.btn-outline:active {
     left: 0;
 }
 
-
 /* Projects */
 
 /*.project {
@@ -185,20 +187,20 @@ a.btn-outline:active {
 /* Talks */
 
 .talk-section {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .talk {
-  margin-top: .5em;
-  margin-bottom: 1.5em;
+    margin-top: .5em;
+    margin-bottom: 1.5em;
 }
 
 .talk-subtitle {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .talk-resource {
-  padding-right: 0.5em;
+    padding-right: 0.5em;
 }
 
 /* this does some magic that preserves the 8.5x11" aspect ratio */
@@ -220,91 +222,99 @@ a.btn-outline:active {
 
 /* IMAGES & CAPTIONS */
 img {
-  /* alt-text styling */
-  font-size: .75rem;
-  font-style: italic;
-  font-family: Menlo, Monaco, "Courier New", monospace;
+    /* alt-text styling */
+    font-size: .75rem;
+    font-style: italic;
+    font-family: Menlo, Monaco, "Courier New", monospace;
 }
+
 .caption {
-  font-size: .75rem;
-  font-style: normal;
+    font-size: .75rem;
+    font-style: normal;
 }
+
 .credit {
-  font-size: .6rem;
-  font-style: italic;
+    font-size: .6rem;
+    font-style: italic;
 }
 
 /* CODE */
 code {
-  color: inherit; /* code color matches text or link/title color */
-  white-space: nowrap;
+    color: inherit; /* code color matches text or link/title color */
+    white-space: nowrap;
 }
+
 pre > code, .code > pre {
-  white-space: pre; /* only code in <pre> blocks is allowed to wrap */
+    white-space: pre; /* only code in <pre> blocks is allowed to wrap */
 }
+
 pre {
-  overflow-x: scroll;
-  padding: 5px;
-  white-space: pre;
+    overflow-x: scroll;
+    padding: 5px;
+    white-space: pre;
 }
+
 .lineno {
-  word-break: keep-all;
-  padding: 0;
-  color: rgb(180,180,180);
+    word-break: keep-all;
+    padding: 0;
+    color: rgb(180, 180, 180);
 }
+
 code > table {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
+
 code table, code td {
-  border: none;
+    border: none;
 }
+
 figure {
-  margin: 0;
+    margin: 0;
 }
 
 /* COLORS */
 
 /* Red */
 .theme-base-08 #sidebar-buttons {
-  color: #ac4142;
+    color: #ac4142;
 }
 
 /* Orange */
 .theme-base-09 #sidebar-buttons {
-  color: #d28445;
+    color: #d28445;
 }
 
 /* Yellow */
 .theme-base-0a #sidebar-buttons {
-  color: #DCAC69; /*#f4bf75;*/
+    color: #DCAC69; /*#f4bf75;*/
 }
 
 /* Green */
 .theme-base-0b #sidebar-buttons {
-  color: #90a959;
+    color: #90a959;
 }
 
 /* Cyan */
 .theme-base-0c #sidebar-buttons {
-  color: #75b5aa;
+    color: #75b5aa;
 }
 
 /* Blue */
 .theme-base-0d #sidebar-buttons {
-  color: #6a9fb5;
+    color: #6a9fb5;
 }
 
 /* Magenta */
 .theme-base-0e #sidebar-buttons {
-  color: #aa759f;
+    color: #aa759f;
 }
 
 /* Brown */
 .theme-base-0f #sidebar-buttons {
-  color: #8f5536;
+    color: #8f5536;
 }
 
 /* Black (no class on body - Poole defaults) */
 #sidebar-buttons {
-  color: #000000;
+    color: #000000;
 }
