@@ -13,7 +13,7 @@ permalink:              /blog/:categories/:title/
 title:            'Saravana Thiyagaraj'
 name:             'Saravana Thiyagaraj'
 tagline:          'Keep moving forward'
-description:      'software developer and clean code evangelist'
+
 #url:              http://thsaravana.github.io/
 baseurl:
 blogurl:          /blog/
@@ -40,11 +40,6 @@ version:          2.1.0
 
 github:
   repo:           https://github.com/thsaravana/thsaravana.github.io
-
-# Collections
-collections:
-  - projects
-  - talks
 
 # defaults:
 #   -

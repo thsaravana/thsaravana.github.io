@@ -20,6 +20,11 @@ html {
   font-family: "Montserrat", sans-serif;
 }*/
 
+.description {
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
 .content h1 {
   font-size: 1rem;
   padding-top:0.5rem;
@@ -48,6 +53,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .sidebar-about h1 {
+    font-size: 3rem;
     font-family: "Montserrat", sans-serif;
 }
 
