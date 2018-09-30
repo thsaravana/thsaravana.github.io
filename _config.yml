@@ -1,0 +1,55 @@
+# Dependencies
+highlighter:      rouge
+
+gems:
+  - jekyll-paginate
+  - jekyll-feed
+
+# Permalinks
+permalink:              /blog/:categories/:title/
+# permalink:            blog/:categories/:year/:month/:day/:title/
+
+# Setup
+title:            'Saravana Thiyagaraj'
+name:             'Saravana Thiyagaraj'
+tagline:          'Keep moving forward'
+description:      'software developer and clean code evangelist'
+#url:              http://thsaravana.github.io/
+baseurl:
+blogurl:          /blog/
+
+# Assets
+images:         '/img'
+pdfs:           '/pdf'
+
+author:
+  name:           'Saravana Thiyagaraj'
+  url:            thsaravana.github.io
+  email:          'thsaravana@gmail.com'
+  github:         'https://github.com/thsaravana'
+  stackoverflow:  'https://stackoverflow.com/users/story/4747587'
+  twitter:        'https://twitter.com/thsaravana'
+  googleplus:     ''
+  linkedin:       'https://www.linkedin.com/in/thsaravana'
+
+paginate:         3
+# paginate_path:    "/blog/page:num/"
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/thsaravana/thsaravana.github.io
+
+# Collections
+collections:
+  - projects
+  - talks
+
+# defaults:
+#   -
+#     scope:
+#       path: ""
+#       type: "projects" # a collection in your site, in plural form
+#     values:
+#       layout: "default"

@@ -1,24 +1,40 @@
-<!DOCTYPE html>
-<html>
-	<head>
-	<link rel="stylesheet" type="text/css"
-			  href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise">
-		<style>
-		  h1 {
-			font-family: 'Waiting for the Sunrise', cursive;
-			font-size: 150px;
-			color: white;
-			position: absolute;
-			width: 100px;
-			height: 50px;
-			top: 50%;
-			left: 50%;
-			margin-left: -50px; /* margin is -0.5 * dimension */
-			margin-top: -25px;  
-			}​
-		</style>
-	</head>
-	<body style="background: black">
-		<h1>thsaravana</h1>
-	</body>
-</html>
+---
+layout: default
+title: Home
+---
+
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title | markdownify }}
+      </a>
+    </h1>
+    {% if post.subtitle %}
+      <h3 class="post-subtitle">{{ post.subtitle | markdownify  }}</h3>
+    {% endif %}
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+    {{ post.excerpt | markdownify }}
+  </div>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a class="pagination-item newer"
+       href="{{ site.baseurl }}/{% if paginator.page > 2 %}page{{paginator.previous_page}}{% endif %}">
+       <i class="fa fa-arrow-left"></i> Newer
+   </a>
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">
+        Older <i class="fa fa-arrow-right"></i>
+    </a>
+  {% endif %}
+
+
+
+</div>
