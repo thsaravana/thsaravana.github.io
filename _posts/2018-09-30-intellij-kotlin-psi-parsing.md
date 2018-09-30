@@ -3,7 +3,7 @@ layout: post
 title: "PSI Parsing of Kotlin Files"
 ---
 
-# Hinc Thyneius
+I have written a couple of intellJ plugins that involves parsing PSI, but that's for Java. Recently, I was writing a plugin to help me in my office work. This time it involved PSI parsing of Kotlin files. I expected it to be the same as Java, but oh my, it was different. So thought of writing a one-pager on it.
 
 ## Dextraque demittit arte passa hoste
 
