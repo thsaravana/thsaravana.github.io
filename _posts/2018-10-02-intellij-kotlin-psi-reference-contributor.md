@@ -69,9 +69,7 @@ class MyReference(element: PsiElement) : PsiReferenceBase<PsiElement>(element, a
 We need to override the `resolve()` method and return the `PsiFile` element (which is the `.txt` file). This is where
 we connect the `folder/properties` and the `properties.txt` file.
 
-    
-<br>    
-Note:<br>
+**Note:<br>**
 The `resources` above is an extension function. Once again, I love Kotlin!
 
 ```kotlin    
@@ -79,3 +77,21 @@ val Project.resources: VirtualFile?
     get() = ProjectRootManager.getInstance(this).contentSourceRoots
             .find { it.path.endsWith("src/main/resources") }
 ```
+
+### Gotchas
+So I didn't get all this right the first time. I had to bang my head and keyboard to get this working. Following are some
+of the lessons that I would like to remember.
+ 
+1. The first would be in figuring out the `ElementPattern`. Here I used `KtLiteralStringTemplateEntry`, but initially I
+tried `LeafPsiElement` and it failed. You need to select the element that supports References.
+
+2. I used the `PsiReferenceBase<PsiElement>(element)` form of the constructor and I got the `Could not find a Manipulator...`
+exception. This is because I didn't pass the `TextRange` in the constructor and so the `PsiReferenceBase` tried to pick
+it from the `ElementsManipulator` which was null (since there was no manipulator). I fixed it by using the 
+`PsiReferenceBase<PsiElement>(element, allOf(element.text))` form of the constructor.
+
+3. I first used `PsiReferenceBase<PsiElement>(element, element.textRange)` and I couldn't see the hyperlink, and the references
+didn't work. The reason is because of a TextRange mismatch. `element.textRange` returns the TextRange of the element
+relative to the *containing File*. But the TextRange expected is relative to the *element*. Hence I chose `allOf(element.text)`.
+It was after this that I could see the hyperlink. Note here, that if you don't want the whole string to be hyperlinked, but only
+a part of it, use `TextRange(startOffset, endOffset)`. 
