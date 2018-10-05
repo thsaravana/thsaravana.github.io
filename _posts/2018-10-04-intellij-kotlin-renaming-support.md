@@ -37,4 +37,5 @@ ElementManipulator for it. In order for the renaming to work you need to overrid
 method. You do the same thing there what we did here. And that's really it. Oh, you do need to register
 your manipulator against the `PsiElement` in the plugin.xml.<br>
 I didn't add an `ElementManipulator` here because `KtStringTemplateExpressionManipulator` already exists, and
-so my hands were tied.
+so my hands were tied.<br> If you do decide to use an ElementManipulator, you should override `getRangeInElement()`
+as well. This is the TextRange that's highlighted when you Ctrl hover over the reference.
