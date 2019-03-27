@@ -16,7 +16,7 @@ your hands dirty to make them go away. This blog is all about that.
 3. Under the `Extensions` folder, open the folder corresponding to the `ID` and navigate your way to `css/style.min.css`
 4. Edit that file to add the following lines:
     ```css
-    #centerclock { display: none; }
+    .center .clock { display: none; }
     #greeting { display: none; }
     ```
 5. Save it and restart Chrome
