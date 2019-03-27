@@ -21,3 +21,5 @@ your hands dirty to make them go away. This blog is all about that.
     ```
 5. Save it and restart Chrome
 6. Now enjoy the background in peace
+<br><br><br>
+_Note: When Momentum extension gets updated, the css file will be overwritten and hence you need to do this again._
