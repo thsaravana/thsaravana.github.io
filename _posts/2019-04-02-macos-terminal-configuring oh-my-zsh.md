@@ -35,7 +35,7 @@ using [this](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTAL
 8. Now when you open the Terminal, you many not like it at first instant due to some character missing (because of
 improper font) or the awkward color scheme. I have customised the color and you can import my [settings](/assets/ohMyZsh/Custom.terminal).<br>
 I have chosen a lighter color scheme.<br>
-![Color Scheme]({{"/assets/ohMyZsh/terminal-color-scheme.png" | absolute_url}})
+![Color Scheme](/assets/ohMyZsh/terminal-color-scheme.png)
 9. There you go. Enjoy your awesome Terminal.
 
 <br><br>
