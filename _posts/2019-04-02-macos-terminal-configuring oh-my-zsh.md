@@ -32,11 +32,12 @@ using [this](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTAL
       gradle
     )
     ```
-8. Now when you open the Terminal, you many not like it at first instant due to some character missing (because of
+8. If you want to get rid of the pesky username 'something@xxxx', then add `prompt_context() {}` to the last line of the .zshrc file.     
+9. Now when you open the Terminal, you many not like it at first instant due to some character missing (because of
 improper font) or the awkward color scheme. I have customised the color and you can import my [settings](/assets/ohMyZsh/Custom.terminal).<br>
 I have chosen a lighter color scheme.<br>
 ![Color Scheme]({{ '/assets/ohMyZsh/terminal-color-scheme.png' | absolute_url }})
-9. There you go. Enjoy your awesome Terminal.
+10. There you go. Enjoy your awesome Terminal.
 
 <br><br>
 Note: If you are using IntelliJ iDEA, then this will reflect in that as well. Just ensure you do these things:<br>
