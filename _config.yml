@@ -41,6 +41,7 @@ version:          2.1.0
 github:
   repo:           https://github.com/thsaravana/thsaravana.github.io
 
+repository:       thsaravana/thsaravana.github.io
 # defaults:
 #   -
 #     scope:
