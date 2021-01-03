@@ -19,7 +19,7 @@ from each other.
 | doesn't inherit from higher up in hierarchy | supports inheritance and overrides |
 
 <h3>View attributes / Theme attributes</h3>
-<h6>Style</h6>
+**Style**
 ```xml
 <style name="Widget.App.Chip" parent="Widget.MaterialComponents.Chip.Choice">
     <item name="chipStrokeWidth">1dp</item>
@@ -27,7 +27,7 @@ from each other.
     <item name="android:clickable">false</item>
 </style>
 ```
-<h6>Theme</h6>
+**Theme**
 ```xml
 <style name="ThemeOverlay.Label.Red" parent="">
     <item name="colorSurface">@color/red</item>
@@ -47,14 +47,14 @@ activity in the AndroidManifest file, or to the entire application. Programatica
 can apply Theme to a context using `ContextThemeWrapper`.
 
 <h3>Doesn't inherit / Supports inheritance</h3>
-<h6>Style</h6>
+**Style**
 ```xml
 <ViewGroup style="@style/Widget.App.ViewGroup">
     <View/>
 </ViewGroup>
 ```
 Here, the style is applied only to the ViewGroup and the View is not impacted by the style in anyways.
-<h6>Theme</h6>
+**Theme**
 ```xml
 <ViewGroup android:theme="@style/ThemeOverlay.App.Red">
     <View android:theme="@style/ThemeOverlay.App.Round"/>
@@ -77,10 +77,11 @@ to avoid this we have different files for different entities.
 Naming convention is critical to differentiate styles, themes, shapeAppearances, etc... Every style starts
 with `Widget.App.xxxx` and for themes it's `Theme.App.xxxx` or `ThemeOverlay.App.xxxx`. This is mainly to
 avoid accidental usage of a Theme instead of a Style, or vice versa. We can have a custom Lint rule to check this, if needed.
-The same goes for ShapeAppearances and TextAppearances. Having all these separated also helps in reuse. For instance,
-the same ShapeAppearance can be applied for different material components via themes. Another important usage of
-this organizational structure is to keep things small and definite. For instance, any app should have
-a limited number of TextStyles and we can define all the variations in `text.xml` and make the file effectively readonly.
-Thus, developers won't be adding any new text styles and will only use the predefined ones.
+The same goes for ShapeAppearances and TextAppearances.<br>
+Having all these separated also helps in reuse. For instance, the same ShapeAppearance can be applied for different material 
+components via themes.<br>
+Another important usage of this organizational structure is to keep things small and definite. For instance, any app 
+should have a limited number of TextStyles and we can define all the variations in `text.xml` and make the file 
+effectively readonly.Thus, developers won't be adding any new text styles and will only use the predefined ones.
 
 *TBD*
