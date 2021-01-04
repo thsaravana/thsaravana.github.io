@@ -85,5 +85,7 @@ should have a limited number of TextStyles and we can define all the variations 
 effectively readonly.Thus, developers won't be adding any new text styles and will only use the predefined ones.
 
 <h2>Applying Material Themes</h2>
+Our app is a legacy app and this the first time we are introducing Material components and Material theming. So the first
+step is to replace our AppCompat theme with the Material ones.
 
 *TBD*
