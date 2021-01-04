@@ -5,7 +5,7 @@ title: "How we applied material theming in our app"
 
 1. Styles vs Themes
 2. Organizing Styles & Themes
-3. Applying Themes
+3. Applying Material Themes
 
 <h2>Styles vs Themes</h2>
 Perhaps the important reason for confusing themes with styles, is due to the fact that
@@ -53,7 +53,7 @@ can apply Theme to a context using `ContextThemeWrapper`.
     <View/>
 </ViewGroup>
 ```
-Here, the style is applied only to the ViewGroup and the View is not impacted by the style in anyways.
+Here, the style is applied only to the ViewGroup and the View is not impacted by the style in anyways.<br>
 **Theme**
 ```xml
 <ViewGroup android:theme="@style/ThemeOverlay.App.Red">
@@ -83,5 +83,7 @@ components via themes.<br>
 Another important usage of this organizational structure is to keep things small and definite. For instance, any app 
 should have a limited number of TextStyles and we can define all the variations in `text.xml` and make the file 
 effectively readonly.Thus, developers won't be adding any new text styles and will only use the predefined ones.
+
+<h2>Applying Material Themes</h2>
 
 *TBD*
