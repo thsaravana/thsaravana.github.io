@@ -50,7 +50,7 @@ View attributes.
     app:colorPrimary="@color/white"    // Doesn't Work; colorPrimary is a theme attribute 
 />
 ```
-Looking at above you will understand the different between View and Theme attributes. The only way you can set a value
+Looking at above you will understand the difference between View and Theme attributes. The only way to set a value
 for a Theme attribute is via themes. Styles should only contain view attributes and theme should only contain theme attributes.
 
 <h3>Specific View / Context or View</h3>
