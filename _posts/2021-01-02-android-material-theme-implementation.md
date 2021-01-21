@@ -38,7 +38,20 @@ from each other.
 Here, `textColor`,`clickable` are view attributes. These are attributes of view, that you can
 directly mention in the view's xml definition. `colorSurface`, `colorPrimary` are theme attributes.
 These are not tied up to any view, and have zero effect if you mention this in view's xml definition.
-Styles should only contain view attributes and theme should only contain theme attributes.
+
+Think of it this way. Let's look at a xml layout of a Chip to clearly understand Theme attributes and
+View attributes.
+```
+<com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:textColor="?colorPrimary" // Works; view attribute(textColor) reffering a theme attribute(colorPrimary)
+    app:chipStrokeWidth="1dp"    // Works; chipStrokeWidth is a view attribute
+    app:colorPrimary="@color/white"    // Doesn't Work; colorPrimary is a theme attribute 
+/>
+```
+Looking at above you will understand the different between View and Theme attributes. The only way you can set a value
+for a Theme attribute is via themes. Styles should only contain view attributes and theme should only contain theme attributes.
 
 <h3>Specific View / Context or View</h3>
 A style can only be applied to a View, via the `style="@style/Widget.App.Chip"`. A theme
