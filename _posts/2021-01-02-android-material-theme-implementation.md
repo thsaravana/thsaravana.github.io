@@ -109,6 +109,7 @@ of the application. This is only when you have to migrate from AppCompat to Mate
 ```
 <br>
 The definition of `Theme.App.Base.Chip` would be something like:<br>
+
 ```xml
 <style name="Theme.App.Base.Chip" parent="Widget.MaterialComponents.Chip.Choice">
     <item name="shapeAppearance">@style/ShapeAppearance.Base.SmallComponent</item>
@@ -124,6 +125,7 @@ The definition of `Theme.App.Base.Chip` would be something like:<br>
 <br>
 - Once you add this, all `Chip` in your App would pick this Style. So choose a good default style. Later if you want to customize
 some `Chip`, you can always apply Style at any level, may be something like this:<br>
+
 ```xml
 <style name="Theme.App.Base.Chip.Tags">
     <item name="chipStrokeWidth">1dp</item>
