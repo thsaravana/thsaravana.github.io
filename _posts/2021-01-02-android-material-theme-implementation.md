@@ -103,11 +103,12 @@ step is to replace our AppCompat theme with the Material ones.
 - Use the Bridge variant of Material Theme so that you can control each material component instead of impacting all components
 of the application. This is only when you have to migrate from AppCompat to Material. If you are writing a new app, please do not
   use the Bridge variant.
-- Let's take the case of `Chip` and customize it via themes. In you base application theme, add the below item:
+- Let's take the case of `Chip` and customize it via themes. In you base application theme, add the below item:<br>
 ```xml
 <item name="chipStyle">@style/Theme.App.Base.Chip</item>
 ```
-The definition of `Theme.App.Base.Chip` would be something like:
+<br>
+The definition of `Theme.App.Base.Chip` would be something like:<br>
 ```xml
 <style name="Theme.App.Base.Chip" parent="Widget.MaterialComponents.Chip.Choice">
     <item name="shapeAppearance">@style/ShapeAppearance.Base.SmallComponent</item>
@@ -120,8 +121,9 @@ The definition of `Theme.App.Base.Chip` would be something like:
     <item name="chipBackgroundColor">?colorSurface</item>
 </style>
 ```
+<br>
 - Once you add this, all `Chip` in your App would pick this Style. So choose a good default style. Later if you want to customize
-some `Chip`, you can always apply Style at any level, may be something like this:
+some `Chip`, you can always apply Style at any level, may be something like this:<br>
 ```xml
 <style name="Theme.App.Base.Chip.Tags">
     <item name="chipStrokeWidth">1dp</item>
@@ -131,6 +133,7 @@ some `Chip`, you can always apply Style at any level, may be something like this
     <item name="chipEndPadding">0dp</item>
 </style>
 ```
+<br>
 - You will notice that Color, Shape and Text are not hardcoded in the styles but are referred via themes. So you can use the
 same style, but can customize the appearance via themes. In the above case, you just have to set two different themes setting `colorPrimary`
 and `colorSurface` to support Normal/Dark mode. You don't have to change the layout or the style, but just the theme.
