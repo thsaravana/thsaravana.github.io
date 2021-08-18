@@ -104,9 +104,11 @@ step is to replace our AppCompat theme with the Material ones.
 of the application. This is only when you have to migrate from AppCompat to Material. If you are writing a new app, please do not
   use the Bridge variant.
 - Let's take the case of `Chip` and customize it via themes. In you base application theme, add the below item:<br>
-```xml
+
+```
 <item name="chipStyle">@style/Theme.App.Base.Chip</item>
 ```
+
 <br>
 The definition of `Theme.App.Base.Chip` would be something like:<br>
 
@@ -122,6 +124,7 @@ The definition of `Theme.App.Base.Chip` would be something like:<br>
     <item name="chipBackgroundColor">?colorSurface</item>
 </style>
 ```
+
 <br>
 - Once you add this, all `Chip` in your App would pick this Style. So choose a good default style. Later if you want to customize
 some `Chip`, you can always apply Style at any level, may be something like this:<br>
