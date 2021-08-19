@@ -4,7 +4,7 @@ title: "JaCoCo single coverage for Multi Module projects"
 ---
 
 I am working on an android project with multiple modules. I use JaCoCo for code coverage, and it's setup in a way that 
-a coverage report is generated for each module. Recently, I was asked to generate a single code coverage report for the 
+a coverage report is generated for each module. Recently, I was in a need to generate a single code coverage report for the 
 entire project so that it could be visualized. This blog explains how this could be done, since I didn't find any other 
 material on this.
 
@@ -172,10 +172,10 @@ and generate a report from that.
 ### Generating the Report
 
 1. First run `./gradlew debugCoverage`. This will generate individual jacoco reports for all the module. Though we don't care 
-about these individual reports, we need the `.exec` files that is generated in each module. Without this `allDebugCoverage` won't work.
+about these individual reports, we need the `.exec` files that is generated in each module, without which `allDebugCoverage` won't work.
 <br><br>
-2. After `debugCoverage`, run `./gradlew allDebugCoverage`. This will now use the intermediate artifacts created from above task and generate 
-a consolidated report in the Root project, i.e, `{root}/build/reports/jacoco`
+2. After `debugCoverage` is successfully executed, run `./gradlew allDebugCoverage`. This will now use the intermediate artifacts created from above task and generate 
+a consolidated report in the Root project, i.e, under `{root}/build/reports/jacoco`.
    
 ### Improvements
 I have hardcoded the script to run only on the Debug variant. If you want to generate a gradle task for all variants, then you can modify the 
@@ -197,5 +197,5 @@ So to keep things really simple I just chose a variant that's common for all mod
 ### Extras
 If you are using Github Actions, and you want to publish this coverage report as a Comment in the Pull Request, then you 
 can use the action [JaCoCo Report](https://github.com/marketplace/actions/jacoco-report). Right now this action only takes 
-in a Single jacoco report, but will modify this soon to support multiple reports. After that I will no longer require the 
+in a single jacoco report, but will modify this soon to support multiple reports. After that I will no longer require the 
 `addDebugCoverage` task.
