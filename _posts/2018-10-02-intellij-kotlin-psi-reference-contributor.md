@@ -5,7 +5,8 @@ title: "Adding References to existing language"
 
 I am not writing a custom language plugin, but trying to add references to a string literal, so this is kind
 of an add-on to the kotlin language. I tried using `PsiReferenceContributor` and finally accomplished what I set out to do. 
-This blog is a reminder to myself so that I don't make these mistakes again :)
+This blog is a reminder to myself so that I don't make these mistakes again :) For the full source code, check out the 
+[handlebars-support](https://github.com/Madrapps/handlebars-support) plugin.
 
 ### Objective
 ```kotlin

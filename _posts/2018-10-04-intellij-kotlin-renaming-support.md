@@ -6,7 +6,8 @@ title: "Adding Renaming support and Element Manipulators"
 I really don't have to add renaming support for my plugin, but I have come so far and it seems
 so natural that I have to support for renaming. Especially, this whole "ElementManipulator" seems
 mysterious and I want to poke it and see what happens. This blog does not cover in-place renaming, 
-but renaming that you get free when you create a reference.
+but renaming that you get free when you create a reference. For the full source code, check out the
+[handlebars-support](https://github.com/Madrapps/handlebars-support) plugin.
 
 ### Objective
 ```kotlin
