@@ -31,7 +31,7 @@ then download the folder "Translations" and use it in our Android project.
 ### The Code
 For the full working script take a look at this [gist](https://gist.github.com/thsaravana/51676f49a80cb23e2ff25e98b0aa6fd7).
 
-1. The `onOpen()` function adds the menu to the bar, along with the JS function to invoke when the menu is clicked.
+The `onOpen()` function adds the menu to the bar, along with the JS function to invoke when the menu is clicked.
 
 ```
 function onOpen() {
@@ -42,7 +42,7 @@ function onOpen() {
 }
 ```
 
-2. The `exportTranslations()` function uses other functions to get the data from the Sheet, parses the data, constructs
+The `exportTranslations()` function uses other functions to get the data from the Sheet, parses the data, constructs
 the `strings.xml` file's content, and then uploads the file (along with the `values` folder) to Google Drive.
 
 ```
@@ -67,7 +67,7 @@ function exportTranslations() {
 
 The `DriveApp` is used to create folders and files in Google Drive.
 
-3. The remaining functions are just to parse the Cells in the sheet and get the data in a proper format. You can take a look
+The remaining functions are just to parse the Cells in the sheet and get the data in a proper format. You can take a look
 at the [gist](https://gist.github.com/thsaravana/51676f49a80cb23e2ff25e98b0aa6fd7) to know more. Some significant stuff here
 is how the data is extracted from the Sheet.
 
