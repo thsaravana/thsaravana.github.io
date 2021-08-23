@@ -11,7 +11,7 @@ on your Google Sheet.
 ### Google Sheet format for Translations
 ![Sheet Format]({{ '/assets/AppsScriptAndroidTranslation/sample-translation.png' | absolute_url }})
 <br>
-The above is how the Sheet looks like. Each row represents a language, and each column represents a key. So in the above
+The above is the general format of the sheet. Each row represents a language, and each column represents a key. So in the above
 case, for language `en`, the `strings.xml` file should be as follows:
 
 ```xml
@@ -23,7 +23,7 @@ case, for language `en`, the `strings.xml` file should be as follows:
 ```
 
 ### Adding Google Apps Script
-To add the script, click on `Tools` -> `Script editor`. You can then add your JS code in the Editor. In our case, we will
+To add the script, in your Google Sheet, click on `Tools` -> `Script editor`. You can then add your JS code in the Editor. In our case, we will
 add a menu "Android" to the menu bar, and then a sub-menu under it called "Export". Clicking on this will generate a "Translations"
 folder and sub folders like "values-en", "values-bs", etc... each containing the corresponding `strings.xml` file. We can
 then download the folder "Translations" and use it in our Android project.
@@ -32,6 +32,7 @@ then download the folder "Translations" and use it in our Android project.
 For the full working script take a look at this [gist](https://gist.github.com/thsaravana/51676f49a80cb23e2ff25e98b0aa6fd7).
 
 1. The `onOpen()` function adds the menu to the bar, along with the JS function to invoke when the menu is clicked.
+
 ```
 function onOpen() {
   SpreadsheetApp.getUi()
@@ -44,6 +45,7 @@ function onOpen() {
 
 2. The `exportTranslations()` function uses other functions to get the data from the Sheet, parses the data, constructs
 the `strings.xml` file's content, and then uploads the file (along with the `values` folder) to Google Drive.
+
 ```
 function exportTranslations() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -65,10 +67,12 @@ function exportTranslations() {
 ```
 
 The `DriveApp` is used to create folders and files in Google Drive.
+<br>
 
 3. The remaining functions are just to parse the Cells in the sheet and get the data in a proper format. You can take a look
 at the [gist](https://gist.github.com/thsaravana/51676f49a80cb23e2ff25e98b0aa6fd7) to know more. Some significant stuff here
 is how the data is extracted from the Sheet.
+
 ``` 
 const headersRange = sheet.getRange(1, 2, 1, sheet.getMaxColumns());
 const dataRange = sheet.getRange(2, 2, sheet.getMaxRows(), sheet.getMaxColumns());
