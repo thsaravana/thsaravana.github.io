@@ -68,16 +68,16 @@ function exportTranslations() {
 The `DriveApp` is used to create folders and files in Google Drive.
 
 The remaining functions are just to parse the Cells in the sheet and get the data in a proper format. You can take a look
-at the [gist](https://gist.github.com/thsaravana/51676f49a80cb23e2ff25e98b0aa6fd7) to know more. Some significant stuff here
-is how the data is extracted from the Sheet.
+at the [gist](https://gist.github.com/thsaravana/51676f49a80cb23e2ff25e98b0aa6fd7) to know more. 
 
 ``` 
 const headersRange = sheet.getRange(1, 2, 1, sheet.getMaxColumns());
 const dataRange = sheet.getRange(2, 2, sheet.getMaxRows(), sheet.getMaxColumns());
 ```
 
-This is how the header and the actual data is read from the Sheet. `dataRange` is nothing but a Two Dimensional array whose
-data starts at 2nd Row and 2nd Column, and extends till the row / column ends.
+This is how the header and the actual data is read from the Sheet. `dataRange` is nothing but a two dimensional array whose
+data starts at 2nd Row and 2nd Column, and extends till the row / column ends. If we encounter a row or column that's empty,
+we stop our processing there.
 
 ### Conclusion
 This is nothing huge. All we did was read a Google Sheet, and processed the data, and uploaded it to Google Drive. But we
