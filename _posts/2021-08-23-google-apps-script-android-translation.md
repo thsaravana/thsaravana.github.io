@@ -41,7 +41,6 @@ function onOpen() {
       .addToUi();
 }
 ```
-<br>
 
 2. The `exportTranslations()` function uses other functions to get the data from the Sheet, parses the data, constructs
 the `strings.xml` file's content, and then uploads the file (along with the `values` folder) to Google Drive.
@@ -67,7 +66,6 @@ function exportTranslations() {
 ```
 
 The `DriveApp` is used to create folders and files in Google Drive.
-<br>
 
 3. The remaining functions are just to parse the Cells in the sheet and get the data in a proper format. You can take a look
 at the [gist](https://gist.github.com/thsaravana/51676f49a80cb23e2ff25e98b0aa6fd7) to know more. Some significant stuff here
