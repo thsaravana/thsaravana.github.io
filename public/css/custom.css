@@ -22,13 +22,13 @@ html {
 
 .description {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: lighter;
+    color: rgba(250, 250, 250, 0.8);
+    font-weight: 400;
 }
 
 .description .hyperlink {
     color: rgba(255, 255, 255, 1);
-    font-weight: normal;
+    font-weight: 900;
 }
 
 .content h1 {
