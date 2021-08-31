@@ -46,6 +46,8 @@ nexusPublishing {
 
 ### Module level Gradle script
 - Add the below `publish.gradle` script to your Module.
+
+
 ```groovy
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
@@ -117,7 +119,9 @@ signing {
 }
 ```
 
+
 - Now add the below to your `build.gradle` at your module level
+
 ```groovy
 ext {
     GROUP_ID = "com.github.madrapps" // your project id registered in Sonatype
