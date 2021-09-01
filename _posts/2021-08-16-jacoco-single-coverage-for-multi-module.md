@@ -194,8 +194,12 @@ This modification is possible (at least as far as I checked) only for the `modul
 location of all `.exec` files created. 
 So to keep things really simple I just chose a variant that's common for all modules.
 
+### Working Project
+For a working example, please refer to the [jacoco-android-playground](https://github.com/thsaravana/jacoco-android-playground) 
+android project. This contains the above-mentioned jacoco setup with the improvements discussed.
+
 ### Extras
 If you are using Github Actions, and you want to publish this coverage report as a Comment in the Pull Request, then you 
 can use the action [JaCoCo Report](https://github.com/marketplace/actions/jacoco-report). Right now this action only takes 
 in a single jacoco report, but will modify this soon to support multiple reports. After that I will no longer require the 
-`addDebugCoverage` task.
+`addDebugCoverage` task. Go crazy!
