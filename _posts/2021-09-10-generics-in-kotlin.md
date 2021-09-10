@@ -6,6 +6,7 @@ title: "Generics in Kotlin"
 > What is it?
 
 These are generics: `List<String>`, `List<Any>`, `Map<Int, String>`, `Jungle<T>`, etc...
+<br>
 
 > What is `T` in `Jungle<T>`?
  
@@ -17,6 +18,7 @@ class Jungle<T> {
     }
 }
 ```
+<br>
 
 > So then, what is the difference between `Jungle<T>` and `Jungle<Animal>`?
 
@@ -27,6 +29,7 @@ fun main() {
     val jungle: Jungle<Animal> = Jungle()
 }
 ```
+<br>
 
 > I have lot more questions.
 
