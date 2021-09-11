@@ -82,4 +82,4 @@ we stop our processing there.
 ### Conclusion
 This is nothing huge. All we did was read a Google Sheet, and processed the data, and uploaded it to Google Drive. But we
 did it all from Google Sheets, and we can ship the script along with the Sheet itself. That's neat. I hope this helps you 
-the next time you have some data in a Google Sheet and you have to do something with it.
+the next time you have some data in a Google Sheet and you have to do something with it. Go crazy!
