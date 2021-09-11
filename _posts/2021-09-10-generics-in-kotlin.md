@@ -127,9 +127,9 @@ Yes you can. You can have as many as you want, but a good design is to limit it 
 Also, note that `in` and `out` can be applied to these type variables independently. So you can have something like 
 `Jungle<in T, out U, in V : Animal>`. This is why, when you talk about *Covariance* or *Contravariance*, you should also mention 
 the type variable. Here, `Jungle` is *covariant* in `U`, but *contravariant* in `T` and `V`.
-<br<br>
+<br><br>
 
-> Alright, awesome! So there is `out`, `in` and the `:` to set an upper bound. What is `Jungle<*>` then? I am confused.
+> So there is `out`, `in` and the `:` to set an upper bound. What is `Jungle<*>` then? I am confused.
  
 You use `*` to say that you don't know the type, but you still want to use it in a safe way. These are called **Star-projections**.
 Let's say you have a `List` of something, and you have no idea of what type 
@@ -156,7 +156,7 @@ class Jungle<T>(var t: T) where T: Animal, T: Walkable {
     fun insertType(t: T) {}
 }
 ```
-<br><br>
+<br>
 
 > That's interesting. What about Generic functions? Any thought on that?
  
@@ -167,6 +167,7 @@ fun <T> getAnimals(t: T): List<T> where T: Animal, T: Walkable {
     return emptyList()
 }
 ```
+<br>
 
 > Wow, thank you so much. All my doubts are cleared now. Is there anything that I missed out in Generics?
  
