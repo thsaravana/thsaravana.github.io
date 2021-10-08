@@ -3,9 +3,9 @@ layout: post
 title: "Swap ViewModel during testing in Android via Hilt"
 ---
 
-I have seen a lot of ViewModel via Hilt examples where we hard code the actual implementation in the Activity or Fragment. May be, 
-this is what you need, and you want to test your Fragments or Activities with the actual viewModel. But if you are like me, and you 
-have some use case where you want to inject a fake viewModel and test your Fragments or Activities, then this blog is for you.
+I have seen a lot of Hilt examples where we hard code the actual implementation of ViewModel in the Activity or Fragment. May be, 
+this is what you need, and you want to test your Fragments or Activities with the actual ViewModel. But if you are like me, and you 
+have some use case where you want to inject a fake ViewModel and test your Fragments or Activities, then this blog is for you.
 
 ### ViewModel setup
 ```kotlin
@@ -47,12 +47,12 @@ abstract class ListViewModel : ViewModel() {
 ```
 
 1. Create an `abstract` class implementing `ViewModel` and make your actual implementation extend this abstract class.
-2. Create a `ViewModelFactory` as always to define how to create your ViewModel.
+2. Create a `ViewModelFactory` to define how to create your ViewModel.
 3. In the above case, I have used `AbstractSavedStateViewModelFactory`, but you can use the normal one if you don't care about
-the `SavedStateHandle`
+the `SavedStateHandle`.
 
 
-### Hilt module
+### Actual Hilt Module
 ```kotlin
 @Module
 @InstallIn(FragmentComponent::class)
@@ -105,7 +105,7 @@ class ListFragment : Fragment() {
 3. I have used the `by viewModels()` extension, but you could also use the `ViewModelProviders.of(....)`
 
 
-### Inject fake ViewModel
+### Fake Hilt Module
 ```kotlin
 @Module
 @TestInstallIn(
@@ -187,6 +187,7 @@ be hosted by an activity that's annotated with `AndroidEntryPoint`. And the exte
 3. Of course, you do have to setup a few more things like:
    1. A `CustomTestRunner` class and configure that as the `testInstrumentationRunner` in your Gradle file
    2. You need to create a test Activity that's annotated with `AndroidEntryPoint`
+   3. `launchFragmentInHiltContainer` is not a method in the platform. It's a custom extension.
 4. Don't worry, the [github project linked below](https://github.com/thsaravana/android-hilt-playground/tree/blog-swap-view-model) 
 has all these configured, and you can just copy-paste these.
 
